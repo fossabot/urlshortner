@@ -18,6 +18,10 @@ app.use(expressLayouts);
 app.set('layout', 'layouts/main');
 app.set('view engine', 'ejs');
 
+// Routes
+app.use('/', require('../routes/index'));
+app.use('/api/url', require('../routes/url.js'));
+
 // Static Folder
 app.use(express.static(join(__dirname, '../public')));
 
