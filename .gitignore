@@ -1,0 +1,14 @@
+# Project Specific Settings
+.idea
+
+# Dependency Directory
+node_modules
+
+# Config
+config/config.js
+
+# Compiled CSS
+public/css/
+
+# Request
+request
