@@ -5,6 +5,10 @@ const { join } = require('path');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const morgan = require('morgan');
+const connectDB = require('../database/db');
+
+// Connect to MongoDB
+connectDB();
 
 const app = express();
 
