@@ -9,7 +9,7 @@
     </form>
 </div>
 
-<table class="table table-dark table-striped">
+<table class="table table-dark table-striped mb-4">
     <thead>
         <tr>
             <th>Short URL</th>
@@ -21,11 +21,19 @@
     <% url.forEach(function(urls){%>
         <tbody>
             <tr>
-                <th><%= urls.shortUrl %></th>
-                <th><%= urls.longUrl %></th>
+                <th>
+                    <a href="<%= urls.shortUrl %>" target="_blank"><%= urls.shortUrl %></a>
+                </th>
+                <th>
+                    <% if (urls.longUrl.length > 64) { %>
+                        <a href="<%= urls.longUrl %>" target="_blank"><%= urls.longUrl.slice(0, 48) + '...' %></a>
+                    <% } else { %>
+                            <a href="<%= urls.longUrl %>" target="_blank"><%= urls.longUrl %></a>
+                    <% } %>
+                </th>
                 <th><%= urls.urlCode %></th>
                 <th>
-                    <form action="/api/url/delete/<%= urls.urlCode %>">
+                    <form action="/api/url/delete/<%= urls.urlCode %>" method="post">
                         <button type="submit" class="btn btn-danger"><i class="far fa-trash"></i></button>
                     </form>
                 </th>
