@@ -5,7 +5,11 @@ const { join } = require('path');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const morgan = require('morgan');
+const passport = require('passport');
 const connectDB = require('../database/db');
+
+// Passport Config
+require('../config/passport')(passport);
 
 // Connect to MongoDB
 connectDB();
