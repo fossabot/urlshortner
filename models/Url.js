@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const urlSchema = new mongoose.Schema({
+const UrlSchema = new mongoose.Schema({
 	urlCode: {
 		type: String,
 		required: true,
@@ -21,4 +21,4 @@ const urlSchema = new mongoose.Schema({
 	},
 });
 
-module.exports = mongoose.model('Url', urlSchema);
+module.exports = mongoose.model('Url', UrlSchema);
