@@ -7,10 +7,18 @@ const Url = require('../models/Url');
 
 // @route	GET /
 // @desc	Index Page
-router.get('/', (req, res, next) => {
-	res.render('index', {
-		title: 'URL Shortner',
-	});
+router.get('/', async (req, res, next) => {
+	try {
+		const url = await Url.find().lean();
+		res.render('index', {
+			title: 'URL Shortner',
+			url,
+		});
+	}
+	catch (err) {
+		console.error(err.message);
+		res.redirect('/error/500');
+	}
 });
 
 // @route	GET /:code
