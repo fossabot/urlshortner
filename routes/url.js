@@ -42,12 +42,15 @@ router.post('/shorten', async (req, res, next) => {
 
 				await url.save();
 
-				res.json(url);
+				res.render('/', {
+					title: 'URL Shortner',
+					url,
+				});
 			}
 		}
 		catch (err) {
 			console.error(err);
-			res.status(500).json('Server Error');
+			res.redirect('error/500');
 		}
 	}
 });

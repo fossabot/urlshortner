@@ -32,4 +32,12 @@ router.get('/:code', async (req, res, next) => {
 	}
 });
 
+// @route	GET /error/500
+// @desc 	Error 500 page
+router.get('/error/500', (req, res, next) => {
+	res.render('errors/500', {
+		title: 'Error 500',
+	});
+});
+
 module.exports = router;
