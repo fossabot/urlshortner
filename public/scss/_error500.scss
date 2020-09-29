@@ -1,0 +1,26 @@
+.error500 {
+  margin-top: 30vh;
+
+  .bold-numbers {
+    h1 {
+      font-size: 72px;
+      font-weight: 300;
+    }
+  }
+
+  h1.title {
+    text-transform: capitalize;
+    font-size: 42px;
+    color: #6c757d;
+  }
+
+  p.description {
+    font-size: 16px;
+  }
+
+  a.btn {
+    border-radius: 2.5px;
+    text-transform: capitalize;
+    width: 50%;
+  }
+}
