@@ -4,8 +4,10 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
+    "start": "cross-env NODE_ENV=production node src/app.js",
     "dev": "cross-env NODE_ENV=development nodemon src/app.js",
-    "sass": "node-sass -w public/scss/ -o public/css/ --recursive"
+    "sass": "node-sass public/scss/ -o public/css/",
+    "watch": "node-sass -w public/scss/ -o public/css/ --recursive"
   },
   "repository": {
     "type": "git",
