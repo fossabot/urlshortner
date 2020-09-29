@@ -9,5 +9,10 @@
 
 body {
   font-family: "Noto Sans JP", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+a {
+  color: white !important;
+  font-style: italic;
 }
