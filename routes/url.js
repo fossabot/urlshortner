@@ -44,7 +44,6 @@ router.post('/shorten', async (req, res, next) => {
 
 				res.render('/', {
 					title: 'URL Shortner',
-					url,
 				});
 			}
 		}
