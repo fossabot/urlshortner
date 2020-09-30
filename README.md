@@ -6,5 +6,5 @@ This project is free and open source under the [MIT License](https://opensource.
 
 - [Setting up URL Shortner](https://github.com/tommyshelby9121/urlshortner/blob/master/docs/SETUP.md)
 - Hosting
-    - [With NGINX](https://github.com/tommyshelby9121/urlshortner/blob/master/docs/hosting/vps/WITH_NGINX.md)
-    - [Without NGINX](https://github.com/tommyshelby9121/urlshortner/blob/master/docs/hosting/vps/WITHOUT_NGINX.md)
+    - [With NGINX](https://github.com/tommyshelby9121/urlshortner/blob/master/docs/hosting/WITH_NGINX.md)
+    - [Without NGINX](https://github.com/tommyshelby9121/urlshortner/blob/master/docs/hosting/WITHOUT_NGINX.md)
