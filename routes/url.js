@@ -55,15 +55,13 @@ router.post('/shorten', async (req, res, next) => {
 });
 
 // @desc	Deletes a URL entry
-// @route	DELETE /delete/:code
+// @route	DELETE /api/url/delete/:code
 router.delete('/delete/:code', async (req, res, next) => {
 	try	{
 		await Url.remove({
-			urlCode: req.params.code
+			urlCode: req.params.code,
 		});
-		res.render('index', {
-			title: 'URL Shortner',
-		});
+		res.redirect('/');
 	}
 	catch (err) {
 		console.error(err);
