@@ -129,7 +129,7 @@ sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 # Every SSL certificate generated is valid for 90 days. To test the renewal process run this;
 certbot renew --dry-run
 ```
-This goes without saying if you didn't specify a `www` domain in [this step]() make sure to remove it from the command. So it will be `
+This goes without saying if you didn't specify a `www` domain in [this step](https://github.com/tommyshelby9121/urlshortner/blob/master/docs/hosting/WITH_NGINX.md#install--configure-nginx) make sure to remove it from the command. So it will be `
 sudo certbot --nginx -d yourdomain.com`
 
 Now visit [https://yourdomain.com](https://yourdomain.com) to view the application with SSL enabled!
