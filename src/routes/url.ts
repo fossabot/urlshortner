@@ -6,7 +6,7 @@ const router = express.Router();
 // Import Model
 import Url from "../models/Url";
 
-// @route   POST /shorten
+// @route   POST /api/url/shorten
 // @desc    Create short Url
 router.post("/shorten", async (req:Request, res:Response) => {
    const { longUrl } = req.body;
@@ -27,7 +27,7 @@ router.post("/shorten", async (req:Request, res:Response) => {
             let url = await Url.findOne({ longUrl });
 
             if (url) {
-                res.sendStatus(409).json("Resource already exists");
+                res.status(409).json("Resource already exists");
             }
             else {
                 const shortUrl = baseUrl + "/" + urlCode;
@@ -40,7 +40,7 @@ router.post("/shorten", async (req:Request, res:Response) => {
 
                 await url.save();
 
-                res.sendStatus(201).json(`${shortUrl}`);
+                res.status(201).json(`${shortUrl}`);
             }
         }
         catch (err) {
@@ -51,6 +51,20 @@ router.post("/shorten", async (req:Request, res:Response) => {
     else {
         return res.status(400).json("Invalid long url");
     }
+});
+
+// @route   DELETE /api/url/delete/:code
+// @desc    Delete a URL entry
+router.delete("/delete/:code", async (req:Request, res:Response) => {
+   try {
+       await Url.remove({
+           urlCode: req.params.code,
+       });
+       res.status(200).json(`Removed ${req.params.code}`);
+   }
+   catch (err) {
+       console.error(err);
+   }
 });
 
 export default router;
