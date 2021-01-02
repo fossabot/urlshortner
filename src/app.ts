@@ -3,8 +3,16 @@ config();
 import express, { Application } from "express";
 import logger from "morgan";
 
+import connectDB from "./database/connection";
+
 // Init Express
 const app:Application = express();
+
+// Establish DB Connection
+connectDB().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
 
 // Logging
 if (process.env.NODE_ENV === "development") {
