@@ -1,13 +1,12 @@
 {
-  "name": "urlshortner",
-  "version": "1.0.2",
-  "description": "",
-  "main": "src/app.js",
+  "name": "@urlshortner/shortner",
+  "version": "2.0.0",
+  "description": "Make your own custom short urls",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node src/app.js",
-    "dev": "cross-env NODE_ENV=development nodemon src/app.js",
-    "sass": "node-sass public/scss/ -o public/css/",
-    "watch": "node-sass -w public/scss/ -o public/css/ --recursive"
+    "start": "npm run build && cross-env NODE_ENV=production node dist/app.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/app.ts",
+    "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
@@ -20,20 +19,28 @@
   },
   "homepage": "https://github.com/tommyshelby9121/urlshortner#readme",
   "dependencies": {
-    "ejs": "^3.1.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-ejs-layouts": "^2.5.0",
     "method-override": "^3.0.0",
-    "mongoose": "^5.10.7",
+    "mongoose": "^5.11.9",
     "morgan": "^1.10.0",
-    "shortid": "^2.2.15",
+    "shortid": "^2.2.16",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "bootstrap": "^5.0.0-alpha1",
-    "cross-env": "^7.0.2",
-    "eslint": "^7.10.0",
-    "node-sass": "^4.14.1",
-    "nodemon": "^2.0.4"
+    "@types/express": "^4.17.9",
+    "@types/method-override": "0.0.31",
+    "@types/mongoose": "^5.10.3",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^14.14.19",
+    "@types/shortid": "0.0.29",
+    "@types/valid-url": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.17.0",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   }
 }

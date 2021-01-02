@@ -1,14 +1,8 @@
-# Project Specific Settings
+# IDE Settings
 .idea
 
-# Dependency Directory
+# NPM
 node_modules
 
-# Config
-config.js
-
-# Compiled CSS
-public/css/
-
-# Request
-request
+# Env
+.env
