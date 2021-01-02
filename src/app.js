@@ -1,6 +1,6 @@
 'use strict';
 
-const config = require('../config/config');
+const config = require('../config');
 const { join } = require('path');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
