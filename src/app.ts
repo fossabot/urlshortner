@@ -26,8 +26,8 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 // Routes
-import api from "./routes/api";
-app.use("/api", api);
+import url from "./routes/url";
+app.use("/api/url", url);
 
 // Define Port
 const port:string|number = process.env.PORT || 3000;
